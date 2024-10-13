@@ -360,6 +360,7 @@ MonoBehaviour:
   - {fileID: 6275285477451440144, guid: afd699a6c1105374587f2220fe4f1be4, type: 3}
   - {fileID: 6275285477451440144, guid: 0d063937948a814448a6f48c84db432a, type: 3}
   - {fileID: 6275285477451440144, guid: ae47e0347c4cab247b009f03e57775af, type: 3}
+  - {fileID: 3484452103990545607, guid: 77908c21d7ecee2448aebc4bd717d5fc, type: 3}
 --- !u!4 &1751709600
 Transform:
   m_ObjectHideFlags: 0
