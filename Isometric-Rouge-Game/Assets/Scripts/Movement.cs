@@ -45,10 +45,13 @@ public class Movement : MonoBehaviour
 
         if(Physics.Raycast(ray, out RaycastHit hit, 100f, LayerMask.GetMask("Ground"))){
             temp.position = hit.point;
-            Vector3 dir = hit.point - transform.position.normalized;
+            Vector3 dir = (hit.point - transform.position).normalized;
+
             float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+            
             Quaternion angleAxis = Quaternion.AngleAxis(angle, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, angleAxis, Time.deltaTime * _rotationSpeed);
+            
         }
     }
 
