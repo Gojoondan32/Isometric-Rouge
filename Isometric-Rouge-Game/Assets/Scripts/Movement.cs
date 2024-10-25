@@ -16,6 +16,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _rotationSpeed;
     private Vector2 inputVector;
+    private Vector3 movementVector;
+    
 
     private void OnEnable(){
         _playerInput.onActionTriggered += OnActionTriggered;
@@ -24,9 +26,12 @@ public class Movement : MonoBehaviour
     private void Update(){
         Rotate();
 
-        if(inputVector.y <= 0) return;
-        //_controller.Move(new Vector3(inputVector.x, 0, inputVector.y) * _speed * Time.deltaTime);
-        _controller.Move(transform.forward * _speed * Time.deltaTime);
+        //if(inputVector.y <= 0 && inputVector.x <= 0) return;
+        // Need to multiply the forward vector by tranform.forward and the right vector by transform.right
+        //movementVector = Vector3.zero;
+        movementVector = (inputVector.x * transform.right) + (inputVector.y * transform.forward);
+        _controller.Move(movementVector * _speed * Time.deltaTime);
+        //_controller.Move(transform.forward * _speed * Time.deltaTime);
     }
 
     private void OnActionTriggered(InputAction.CallbackContext context){
