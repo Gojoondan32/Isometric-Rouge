@@ -615,6 +615,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ortho Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 3058353506645569530, guid: 298d292580776ef41820fd6247505ddc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3058353506645569532, guid: 298d292580776ef41820fd6247505ddc,
         type: 3}
       propertyPath: orthographic
@@ -871,9 +876,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455918758}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1533420751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8912296866376757044, guid: ab446061afb10064588734c31cda8000,
+    type: 3}
+  m_PrefabInstance: {fileID: 8912296865187269627}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1533420752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8912296866376757035, guid: ab446061afb10064588734c31cda8000,
+    type: 3}
+  m_PrefabInstance: {fileID: 8912296865187269627}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1533420755 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1533420755, guid: ab446061afb10064588734c31cda8000,
+    type: 3}
+  m_PrefabInstance: {fileID: 8912296865187269627}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533420751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b4a0cab86605a4f93db8fb86412c33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!143 &1533420756 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 1533420754, guid: ab446061afb10064588734c31cda8000,
     type: 3}
   m_PrefabInstance: {fileID: 8912296865187269627}
   m_PrefabAsset: {fileID: 0}
@@ -883,12 +912,48 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8912296865187269627}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1533420751}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f3c5f2a48a7cc84db0245a7299d3177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1533420758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533420751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 372e57fc71eb2374ba2b72a9743e8cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputHandler: {fileID: 1533420757}
+  _controller: {fileID: 1533420756}
+  _movement: {fileID: 1533420755}
+  _anim: {fileID: 1533420759}
+--- !u!95 &1533420759
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533420751}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e61697e7d5908a542b3bce1e0dc96f2f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1834564244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,6 +1192,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 826659217}
     m_Modifications:
+    - target: {fileID: 1034071568, guid: ab446061afb10064588734c31cda8000, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1533420755, guid: ab446061afb10064588734c31cda8000, type: 3}
       propertyPath: temp
       value: 
@@ -1135,6 +1204,16 @@ PrefabInstance:
       propertyPath: _inputHandler
       value: 
       objectReference: {fileID: 1533420757}
+    - target: {fileID: 8912296865024719054, guid: ab446061afb10064588734c31cda8000,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912296865024719055, guid: ab446061afb10064588734c31cda8000,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8912296866376757034, guid: ab446061afb10064588734c31cda8000,
         type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size

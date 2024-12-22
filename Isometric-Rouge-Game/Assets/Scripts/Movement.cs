@@ -19,14 +19,18 @@ public class Movement : MonoBehaviour
     [SerializeField] private float _rotationSpeed;
     private Vector2 inputVector;
     private Vector3 movementVector;
+    public bool CanMove;
     
 
     private void Awake() {
         _inputHandler.OnMovePerformed += OnMove;
+        CanMove = true;
     }
 
     private void Update(){
         Rotate();
+        if(CanMove == false) return;
+        Debug.Log("getthing here");
 
         //if(inputVector.y <= 0 && inputVector.x <= 0) return;
         // Need to multiply the forward vector by tranform.forward and the right vector by transform.right
@@ -41,10 +45,7 @@ public class Movement : MonoBehaviour
     }
 
     public void OnMove(object sender, InputAction.CallbackContext context){
-        Debug.Log("getthing here");
         inputVector = context.ReadValue<Vector2>();
-
-        
     }
 
 
@@ -63,5 +64,7 @@ public class Movement : MonoBehaviour
             
         }
     }
+
+    public Vector2 GetInputVector() => inputVector;
 
 }
