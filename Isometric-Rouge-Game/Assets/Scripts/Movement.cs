@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
+using Unity.VisualScripting.InputSystem;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -11,6 +12,7 @@ using UnityEngine.Rendering;
 
 public class Movement : MonoBehaviour
 {
+    [SerializeField] private InputHandler _inputHandler;
     [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private CharacterController _controller;
     [SerializeField] private float _speed;
@@ -19,8 +21,8 @@ public class Movement : MonoBehaviour
     private Vector3 movementVector;
     
 
-    private void OnEnable(){
-        _playerInput.onActionTriggered += OnActionTriggered;
+    private void Awake() {
+        _inputHandler.OnMovePerformed += OnMove;
     }
 
     private void Update(){
@@ -29,18 +31,20 @@ public class Movement : MonoBehaviour
         //if(inputVector.y <= 0 && inputVector.x <= 0) return;
         // Need to multiply the forward vector by tranform.forward and the right vector by transform.right
         //movementVector = Vector3.zero;
+
         movementVector = (inputVector.x * transform.right) + (inputVector.y * transform.forward);
         _controller.Move(movementVector * _speed * Time.deltaTime);
+        
+
+
         //_controller.Move(transform.forward * _speed * Time.deltaTime);
     }
 
-    private void OnActionTriggered(InputAction.CallbackContext context){
-        OnMove(context);
-    }
-
-    public void OnMove(InputAction.CallbackContext context){
-        
+    public void OnMove(object sender, InputAction.CallbackContext context){
+        Debug.Log("getthing here");
         inputVector = context.ReadValue<Vector2>();
+
+        
     }
 
 
